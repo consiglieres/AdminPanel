@@ -1,0 +1,28 @@
+button {
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+
+  .button_left-side {
+    .button_add, .button_unlock, .button_lock {
+      background-color: #DA2032;
+      color: white;
+    }
+
+    .button_unlock {
+      margin: 0px 1.5rem 0px 1.5rem;
+    }
+  }
+
+  .button_right-side {
+    .button_filter {
+      background-color: rgba(102, 111, 120, 0.3);
+      color: #666F78;
+    }
+  }
+}

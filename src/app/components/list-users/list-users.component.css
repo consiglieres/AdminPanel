@@ -1,0 +1,43 @@
+.list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 1600px;
+  background-color: white;
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.2);
+  border-radius: 8px;
+
+  .list_user {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+
+    .component {
+      
+    }
+  }
+
+  .list_records {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    h6{
+      margin: 15px;
+    }
+  }
+
+  .list_classes {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: #DA2032;
+    block-size: 52px;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+  }
+}

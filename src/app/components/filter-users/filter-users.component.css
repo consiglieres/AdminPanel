@@ -1,0 +1,49 @@
+button {
+  border: none;
+  border-radius: 8px;
+  height: 48px;
+  width: 169px;
+}
+
+h4 { 
+  margin: 0px;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px;
+  background-color: white;
+  box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.2);
+  border-radius: 8px;
+  padding-bottom: 2rem;
+
+  .filter_text{
+    margin-left: 15rem;
+  }
+
+  .filter_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+  }
+
+  .filter_button {
+    margin-left: 2rem;
+
+    .filter_confirm {
+      background-color: #DA2032;
+      color: white; 
+    }
+
+    .filter_cancellation, .filter_clear {
+      opacity: 90%;
+      color: gray; 
+    }
+
+    .filter_cancellation {
+      margin: 0px 1.5rem 0px 1.5rem;
+    }
+  }
+}

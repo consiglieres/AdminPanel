@@ -1,0 +1,37 @@
+<section class="list">
+
+  <section class="list_records">
+    <h6>Отображать <select></select> записей</h6>
+    <h6>1-20 из 135</h6>
+    <h6>Колличество выбранных записей</h6>
+  </section>
+
+  <section class="list_classes">
+    <div class="list_actions">Действия</div>
+    <div class="list_login">Логин</div>
+    <div class="list_email">E-mail</div>
+    <div class="list_phone">Телефон</div>
+    <div class="list_rule">Роли</div>
+    <div class="list_edit">Дата изменения</div>
+    <div class="list_create">Дата создания</div>
+    <div class="list_status">Статус</div>
+    <div class="list_ES">Наличие ЭП</div>
+  </section>
+
+  <section class="list_users">
+      @for(user of users; track user){
+        <section class="list_user">
+          <select></select>
+          <section><input type="checkbox">{{user.login}}</section>
+          <div class="component">{{user.email}}</div>
+          <div class="component">{{user.phoneNumber}}</div>
+          <div class="component">{{user.roles}}</div>
+          <div class="component">{{user.editDate}}</div>
+          <div class="component">{{user.createDate}}</div>
+          <div class="component">{{user.status}}</div>
+          <div class="component">{{user.epAvailability}}</div>
+        </section> 
+      }
+  </section>
+  
+</section>

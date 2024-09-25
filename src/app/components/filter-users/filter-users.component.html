@@ -1,0 +1,45 @@
+<section class="filter">
+  <h3 class="filter_text">Фильтр</h3>
+
+  <section class="filter_menu" [formGroup]="formFilter">
+    
+    <section class="filter_box-one">
+      <h4>Логин</h4>
+      <input type="text" class="filter_login" formControlName="login" >
+      <h4>E-mail</h4>
+      <input type="text" class="filter-email" formControlName="email">
+      <h4>Статус</h4>
+      <select class="filter_status" formControlName="status">
+        @for(status of filterInputStatus; track status){
+          <option value={{status}}>{{status}}</option>
+        }
+      </select>
+    </section>
+
+    <section class="filter_box-two">
+      <h4>Телефон</h4>
+      <input type="text" class="filter_phone" formControlName="phoneNumber">
+      <h4>Роль</h4>
+      <select type="text" class="filter_role" formControlName="role">
+          @for (role of filterInputRoles; track role) {
+            <option value={{role}}>{{role}}</option>
+          }
+      </select>
+    </section>
+
+    <section class="filter_box-three">
+      <h4>Дата создания</h4>
+      <input type="date" class="filter_create-date" formControlName="createDate">
+      <h4>Дата изменения</h4>
+      <input type="date" class="filter_edit-date" formControlName="editDate">
+    </section>
+
+  </section>
+
+  <section class="filter_button">
+    <button class="filter_confirm" (click)="confirmFilter()">Применить</button>
+    <button class="filter_cancellation">Отменить</button>
+    <button class="filter_clear">Сбросить</button>
+  </section>
+
+</section>

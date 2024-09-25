@@ -1,0 +1,16 @@
+.header{
+  display: flex;
+  justify-content: end;
+  background-color: #DA2032;
+  width: 1600px;
+  height: 70px;
+
+  .header_profile {
+    display: flex;
+    justify-content: end;
+    flex-direction: row;
+    width: 130px;
+    height: 38px;
+    border: 2px solid black;
+  }
+}
