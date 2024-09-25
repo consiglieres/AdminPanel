@@ -5,20 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { ComponentsModule } from './components/components.module';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    AdminComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ComponentsModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        AdminComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        ComponentsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
