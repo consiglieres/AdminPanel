@@ -11,7 +11,7 @@ import { UsersService } from '../../services/users.service';
 export class FilterUsersComponent {
   public filterInputRoles: string[] = inject(UsersService).filterInputRoles
   public filterInputStatus: string[] = inject(UsersService).filterInputStatus
-  
+
   public formFilter: FormGroup = new FormGroup ({
     login: new FormControl<string>('', {nonNullable: true}),
     email: new FormControl<string>('', {nonNullable: true}),
@@ -25,7 +25,7 @@ export class FilterUsersComponent {
   constructor(private _userService: UsersService){}
 
   public confirmFilter(): void {
-    const DataFilter = {
+    const DataFilter: any = {
       login: this.formFilter.controls['login'].value,
       email: this.formFilter.controls['email'].value,
       phoneNumber: this.formFilter.controls['phoneNumber'].value,
@@ -34,10 +34,8 @@ export class FilterUsersComponent {
       editDate: this.formFilter.controls['editDate'].value,
       status: this.formFilter.controls['status'].value,
     }
-    console.log(DataFilter)
 
-    this._userService.filterUsers(DataFilter.login, DataFilter.email, 
-      DataFilter.phoneNumber, DataFilter.role, DataFilter.createDate, 
-      DataFilter.editDate, DataFilter.status)
+    this._userService.setFilterUsers(DataFilter)
   }
 }
+
