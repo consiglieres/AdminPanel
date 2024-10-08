@@ -19,7 +19,8 @@
   </section>
 
   <section class="list_users">
-      @for(user of users; track user){
+    @if(users$ | async; as users){
+      @for(user of users; track user.createDate){
         <section class="list_user">
           <select></select>
           <section><input type="checkbox">{{user.login}}</section>
@@ -32,6 +33,7 @@
           <div class="component">{{user.epAvailability}}</div>
         </section> 
       }
+    }
   </section>
   
 </section>

@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
-import { IUsers } from '../interfaces/users.interface';
 import { Users$ } from '../DataBase/users.database';
+import { IUsers } from '../interfaces/users.interface';
 import { filter } from 'rxjs';
 
 @Injectable()
-export class UsersService {
+export class UsersService { 
   protected users: IUsers[] = this.getUsers()
-  public filtersUsers!: IUsers[]
 
-  public filterInputRoles: string[] = [...new Set(this.users.map(m => m.roles))] 
-  public filterInputStatus: string[] = [...new Set(this.users.map(m => m.status))]
+  public filterInputStatus: string[] = [...new Set(this.users.map(value => value.status))]
+  public filterInputRoles: string[] = [...new Set(this.users.map(value => value.roles))]
 
-  protected getUsers(): IUsers[]{
+  protected getUsers(): IUsers[] {
     let arrUsers!: IUsers[]
     Users$.subscribe(value => arrUsers = value)
     return arrUsers
@@ -19,11 +18,8 @@ export class UsersService {
 
   public filterUsers(login: string, email: string, phoneNumber: string, 
     role: string, createDate: string, editDate: string, status: string): void {
-    if(login !== ""){
-      this.filtersUsers = this.users.filter(value => value.login.includes(login))
-    }
-    else{
-      this.filtersUsers = this.users
-    }
+      if(login !== ""){
+        Users$ = Users$.pipe(filter(value => value === login))
+      }
   }
 }

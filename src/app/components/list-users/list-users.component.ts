@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { IUsers } from '../../interfaces/users.interface';
-import { UsersService } from '../../services/users.service';
+import { Users$ } from '../../DataBase/users.database';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { UsersService } from '../../services/users.service';
   styleUrl: './list-users.component.css'
 })
 export class ListUsersComponent {
-  public users: IUsers[] = inject(UsersService).filtersUsers
+  public users$: Observable<IUsers[]> = Users$
 
 
 

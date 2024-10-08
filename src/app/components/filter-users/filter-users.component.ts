@@ -1,4 +1,4 @@
-import { Component, inject} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { UsersService } from '../../services/users.service';
 
@@ -11,7 +11,7 @@ import { UsersService } from '../../services/users.service';
 export class FilterUsersComponent {
   public filterInputRoles: string[] = inject(UsersService).filterInputRoles
   public filterInputStatus: string[] = inject(UsersService).filterInputStatus
-
+  
   public formFilter: FormGroup = new FormGroup ({
     login: new FormControl<string>('', {nonNullable: true}),
     email: new FormControl<string>('', {nonNullable: true}),
@@ -34,7 +34,8 @@ export class FilterUsersComponent {
       editDate: this.formFilter.controls['editDate'].value,
       status: this.formFilter.controls['status'].value,
     }
-    
+    console.log(DataFilter)
+
     this._userService.filterUsers(DataFilter.login, DataFilter.email, 
       DataFilter.phoneNumber, DataFilter.role, DataFilter.createDate, 
       DataFilter.editDate, DataFilter.status)
